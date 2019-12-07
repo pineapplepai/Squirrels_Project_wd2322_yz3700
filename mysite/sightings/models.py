@@ -33,19 +33,32 @@ class Squirrel(models.Model):
 	max_length = 8,
 	)
 
-    Age = models.CharField(
-	max_length = 10,
-	)
-
     Adult = 'Adult'
     Juvenile = 'Juvenile'
     Unknown = 'Unknown'
     Blank = ''
 
-    Color_ = (
+    Age_ = (
 	   (Adult, 'Adult'),
 	   (Juvenile, 'Juvenile'),
 	   (Unknown, '?'),
+       (Blank, ''),
+	)
+
+    Age = models.CharField(
+	max_length = 10,
+    choices = Age_,
+	)
+
+    Gray = 'Gray'
+    Cinnamon = 'Cinnamon'
+    Black = 'Black'
+    Blank = ''
+
+    Color_ = (
+	   (Gray, 'Gray'),
+	   (Cinnamon, 'Cinnamon'),
+	   (Black, 'Black'),
        (Blank, ''),
 	)
 
