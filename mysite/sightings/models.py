@@ -1,27 +1,32 @@
 from django.db import models
-    
+
 class Squirrel(models.Model):
-    
+
     X = models.DecimalField(
-	max_length = 25,
+    max_digits = 25,
+    decimal_places = 15,
 	)
 
     Y = models.DecimalField(
-	max_length = 25,
+	max_digits = 25,
+    decimal_places = 15,
 	)
 
     Unique_Squirrel_ID = models.CharField(
 	max_length = 20,
 	)
 
+    AM = 'AM'
+    PM = 'PM'
+
     Shift_ = (
-	('AM', _('AM')),
-	('PM', _('PM')),
-    ) 
+        (AM, 'AM'),
+        (PM, 'PM'),
+    )
 
     Shift = models.CharField(
-	max_length = 2,
-	choices = Shift_,
+	   max_length = 2,
+	   choices = Shift_,
 	)
 
     Date = models.DateField(
@@ -31,165 +36,210 @@ class Squirrel(models.Model):
     Age = models.CharField(
 	max_length = 10,
 	)
-    
+
+    Adult = 'Adult'
+    Juvenile = 'Juvenile'
+    Unknown = 'Unknown'
+    Blank = ''
+
     Color_ = (
-	('Adult', _('Adult')),
-	('Juvenile', _('Juvenile')),
-	('Unknown', _('Unknown')),
+	   (Adult, 'Adult'),
+	   (Juvenile, 'Juvenile'),
+	   (Unknown, '?'),
+       (Blank, ''),
 	)
 
     Primary_Fur_Color = models.CharField(
 	max_length = 15,
-	choices = Color_,	
+	choices = Color_,
 	)
-    
+
+    Above_Ground = 'Above Ground'
+    Ground_Plance = 'Ground plane'
+
     Location_ = (
-	('Above Ground', _('Above Ground'),
-	('Ground Plance', _('Ground plane'),
+	(Above_Ground, 'Above Ground'),
+	(Ground_Plance, 'Ground plane'),
 	)
 
     Location = models.CharField(
 	max_length = 20,
 	choices = Location_,
 	)
- 
+
     Specific_Location = models.CharField(
 	max_length = 50,
 	)
- 
+
+    TRUE = 'True'
+    FALSE = 'False'
+
     Running_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Running = (
-	max_length = 5,
+    Running = models.CharField(
+    max_length = 5,
 	choices = Running_,
 	)
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Chasing_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Chasing = (
+    Chasing = models.CharField(
         max_length = 5,
         choices = Chasing_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Climbing_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Climbing = (
+    Climbing = models.CharField(
         max_length = 5,
         choices = Climbing_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Eating_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Eating = (
+    Eating = models.CharField(
         max_length = 5,
         choices = Eating_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Foraging_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Foraging = (
+    Foraging = models.CharField(
         max_length = 5,
         choices = Foraging_,
         )
 
-    Other_Activities = (
+    Other_Activities = models.CharField(
 	max_length = 100,
 	)
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Kuks_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Kuks = (
+    Kuks = models.CharField(
         max_length = 5,
         choices = Kuks_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Quaas_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Quaas = (
+    Quaas = models.CharField(
         max_length = 5,
         choices = Quaas_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Moans_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Moans = (
+    Moans = models.CharField(
         max_length = 5,
         choices = Moans_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Tail_flags_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Tail_flags = (
+    Tail_flags = models.CharField(
         max_length = 5,
         choices = Tail_flags_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Tail_twitches_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Tail_twitches = ( 
+    Tail_twitches = models.CharField(
         max_length = 5,
         choices = Tail_twitches_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Approaches_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Approaches = (
+    Approaches = models.CharField(
         max_length = 5,
         choices = Approaches_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Indifferent_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Indifferent = (
+    Indifferent = models.CharField(
         max_length = 5,
         choices = Indifferent_,
         )
 
+    TRUE = 'True'
+    FALSE = 'False'
+
     Runs_from_ = (
-        ('True', _('True'),
-        ('False', _('False'),
+        (TRUE, 'True'),
+        (FALSE, 'False'),
         )
 
-    Runs_from = (
+    Runs_from = models.CharField(
         max_length = 5,
         choices = Runs_from_,
         )
-
-
-
